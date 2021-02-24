@@ -1,12 +1,17 @@
 import pandas as pd
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 import time
 from variables import *
 
 
-web=webdriver.Chrome("./chromedriver.exe")
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--log-level=3')
+web=webdriver.Chrome("./chromedriver.exe", options=chrome_options)
 
 participants=pd.read_excel("./participants.xlsx")
+
 for index, row in participants.iterrows():
     participant_name=row['Name']
     participant_reg_no=row['Reg. No']
