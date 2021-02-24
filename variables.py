@@ -12,4 +12,4 @@ event_name="Test Event"
 #For example 23-02-2021 must be entered as 23022021
 event_date="23022021"
 #Run in headless mode?(without opening browser), default is 'no'
-run_headless="yes"
+run_headless="no"

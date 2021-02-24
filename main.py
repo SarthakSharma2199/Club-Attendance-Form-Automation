@@ -2,7 +2,6 @@ import pandas as pd
 from attendance_driver import *
 
 participants=pd.read_excel("./participants.xlsx")
-# participants['Attendance Status'].astype(str)
 
 for index, row in participants.iterrows():
     attendance_status=row['Attendance Status']
