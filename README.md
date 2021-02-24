@@ -40,6 +40,12 @@ run_headless="no"
 Enter the participant details in the excel sheet participants.xlsx
 ![Excel](screenshots/excel.PNG)
 
-#Add the Name and Reg Numbers, leave the Attendance Status Column as it is. It is used to keep track of already marked participants incase there is some error.
+Add the **Name** and **Reg Numbers**, leave the **Attendance Status Column** as it is. It is used to keep track of already marked participants incase there is some error.
 
+Thats it! Now just run the script
+```python
+python main.py
+```
+
+## Warning
 :warning: Please use the cloned form for testing before trying it on the official form, and don't misuse the script to generate spam entries.  
