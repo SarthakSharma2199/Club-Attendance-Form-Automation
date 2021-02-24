@@ -23,7 +23,7 @@ def mark_attendance(participant_name, participant_reg_no):
   club_or_chapter_dropdown=web.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div[1]/div[1]')
   club_or_chapter_dropdown.click()
   time.sleep(0.8)
-  club_or_chapter_option = web.find_elements_by_xpath("//div//span[contains(., 'Club')]")
+  club_or_chapter_option = web.find_elements_by_xpath("//div//span[contains(., "+"'"+club_or_chapter+"'"+")]")
   for i in club_or_chapter_option:
       try:
           i.click()
@@ -33,7 +33,7 @@ def mark_attendance(participant_name, participant_reg_no):
   club_or_chapter_name_dropdown=web.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div[1]/div[1]')
   club_or_chapter_name_dropdown.click()
   time.sleep(0.8)
-  club_or_chapter_name_option = web.find_elements_by_xpath("//div//span[contains(., 'Dance club')]")
+  club_or_chapter_name_option = web.find_elements_by_xpath("//div//span[contains(., "+"'"+club_or_chapter_name+"'"+")]")
   for i in club_or_chapter_name_option:
       try:
           i.click()
