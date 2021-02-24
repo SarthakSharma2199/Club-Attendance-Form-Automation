@@ -15,14 +15,14 @@ web=webdriver.Chrome("./chromedriver.exe", options=chrome_options)
 def mark_attendance(participant_name, participant_reg_no):
 
   web.get(google_form_link)
-  time.sleep(0.5)
+  time.sleep(1)
 
   form_email=web.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div[1]/div[2]/div[1]/div/div[1]/input')
   form_email.send_keys(club_email)
 
   club_or_chapter_dropdown=web.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div[1]/div[1]')
   club_or_chapter_dropdown.click()
-  time.sleep(0.2)
+  time.sleep(0.8)
   club_or_chapter_option = web.find_elements_by_xpath("//div//span[contains(., 'Club')]")
   for i in club_or_chapter_option:
       try:
@@ -32,18 +32,18 @@ def mark_attendance(participant_name, participant_reg_no):
 
   club_or_chapter_name_dropdown=web.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div[1]/div[1]')
   club_or_chapter_name_dropdown.click()
-  time.sleep(0.2)
+  time.sleep(0.8)
   club_or_chapter_name_option = web.find_elements_by_xpath("//div//span[contains(., 'Dance club')]")
   for i in club_or_chapter_name_option:
       try:
           i.click()
       except Exception as e:
           print(e)
-  time.sleep(0.2)
+  time.sleep(0.8)
 
   page_one_submit=web.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[3]/div[1]/div[1]/div/span/span')
   page_one_submit.click()
-  time.sleep(0.2)
+  time.sleep(0.8)
 
   form_event_name=web.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[1]/input')
   form_event_name.send_keys(event_name)
@@ -53,7 +53,7 @@ def mark_attendance(participant_name, participant_reg_no):
 
   page_two_submit=web.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[3]/div[1]/div[1]/div[2]/span/span')
   page_two_submit.click()
-  time.sleep(0.2)
+  time.sleep(0.8)
 
   form_participant_name=web.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[1]/input')
   form_participant_name.send_keys(participant_name)
@@ -63,7 +63,7 @@ def mark_attendance(participant_name, participant_reg_no):
 
   final_submit_button=web.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[3]/div[1]/div/div[2]/span/span')
   final_submit_button.click()
-  time.sleep(0.2)
+  time.sleep(0.8)
 
   submit_message=web.find_element_by_css_selector('.freebirdFormviewerViewResponseConfirmationMessage')
   if(submit_message.text=="Your response has been recorded."):
